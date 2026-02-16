@@ -42,6 +42,6 @@ repositories {
 dependencies {
     gradleApi()
 
-    implementation(libs.agp)
-    implementation(libs.agp.api)
+    compileOnly(libs.agp)
+    compileOnly(libs.agp.api)
 }

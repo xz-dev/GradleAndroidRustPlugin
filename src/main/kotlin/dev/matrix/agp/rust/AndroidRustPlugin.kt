@@ -32,7 +32,7 @@ abstract class AndroidRustPlugin @Inject constructor(
             val androidExtension = project.getAndroidExtension()
             val allRustAbiSet = mutableSetOf<Abi>()
             // Use sdkComponents to get NDK directory (Provider<Directory>)
-            val ndkDirectory = androidComponents.sdkComponents.ndkDirectory.get().asFile
+            val ndkDirectory = androidComponents.sdkComponents.ndkDirectory.map { it.asFile }
             val ndkVersion = SemanticVersion(androidExtension.ndkVersion)
             val extensionBuildDirectory = project.layout.buildDirectory.dir("intermediates/rust").get().asFile
 
